@@ -16,4 +16,18 @@ def sales_reports(log_file):
 #prints out to the console the entire line of text, as created from the log_file.
 
 sales_reports(log_file)
+
 #calls the function "sales_reports" and ties it to the variable (storing the txt file) "log_file"
+log_file.close()
+log_file = open("um-server-01.txt")
+
+def melon_reports(log_file):
+    for line in log_file:
+        line = line.rstrip()
+        melon_count = line[16:18]
+        melon_count = melon_count.rstrip()
+        melon_count = int(melon_count)
+        if melon_count > 10:
+            print(line)
+
+melon_reports(log_file)
